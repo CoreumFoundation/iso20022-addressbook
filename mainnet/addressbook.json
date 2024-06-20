@@ -1,1 +1,28 @@
-{}
+{
+    "$schema": "../addressbook.schema.json",
+    "chain_id": "coreum-mainnet-1",
+    "network_type": "mainnet",
+    "bech32_prefix": "core",
+    "key_algo": "secp256k1",
+    "addresses": [
+      {
+        "bech32_encoded_address": "core1d3et2s6wy0ltc0ju6zxtejhgkxnn3ykzv3k2ft",
+        "public_key": "AvkyUlvWHJhLyy3TSYrAB98ZMhCRszPOcVjN+Q3WzOcZ",
+        "branch_and_identification": {
+          "identification": {
+            "bic": "B61NZT4Y"
+          }
+        }
+      },
+      {
+        "bech32_encoded_address": "core1wklhdxmr88fgd3pmff88erl7u6whvckz0y8z98",
+        "public_key": "As6hvvcv3UqvPGXuVnvwA5GMrzUffA3lqh6x8kuGUMnY",
+        "branch_and_identification": {
+          "identification": {
+            "bic": "6P9YGUDF"
+          }
+        }
+      }
+    ]
+  }
+  
