@@ -8,9 +8,17 @@ jobs:
   verify-json-validation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
           INPUT_SCHEMA: addressbook.schema.json
           INPUT_JSONS: mainnet/addressbook.json,testnet/addressbook.json,devnet/addressbook.json
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build
+        run: go build -v ./...
+      - name: Validate data
+        uses: robherley/go-test-action@v0
