@@ -1,6 +1,7 @@
 package iso20022_addressbook
 
 import (
+	"context"
 	"crypto/ecdsa"
 	"crypto/x509"
 	"encoding/base64"
@@ -12,11 +13,15 @@ import (
 )
 
 func TestValidateAddresses(t *testing.T) {
-	networkTypes := []string{"mainnet", "testnet", "devnet"}
-	for _, networkType := range networkTypes {
-		ab, err := addressbook.NewWithRepoAddress(networkType, "file://./%s/addressbook.json")
+	ctx := context.Background()
+
+	chainIds := []string{"coreum-mainnet-1", "coreum-testnet-1", "coreum-devnet-1"}
+	for _, chainId := range chainIds {
+		ab := addressbook.NewWithRepoAddress(chainId, "file://./%s/addressbook.json")
+
+		err := ab.Update(ctx)
 		if err != nil {
-			t.Fatalf("could not get %s address book : %v", networkType, err)
+			t.Fatalf("could not update %s address book : %v", chainId, err)
 		}
 
 		localAddressBook := make(map[string]struct{})
@@ -25,7 +30,7 @@ func TestValidateAddresses(t *testing.T) {
 				t.Fatalf(
 					"duplicate entries with bech32 encoded address %q in %s",
 					address.Bech32EncodedAddress,
-					networkType,
+					chainId,
 				)
 			}
 
@@ -34,7 +39,7 @@ func TestValidateAddresses(t *testing.T) {
 				t.Fatalf(
 					"public key of %q is not a valid base64 encoded string in %s : %v",
 					address.Bech32EncodedAddress,
-					networkType,
+					chainId,
 					err,
 				)
 			}
@@ -45,7 +50,7 @@ func TestValidateAddresses(t *testing.T) {
 					t.Fatalf(
 						"public key of %q is not a valid secp256k1 public key in %s : %v",
 						address.Bech32EncodedAddress,
-						networkType,
+						chainId,
 						err,
 					)
 				}
@@ -55,7 +60,7 @@ func TestValidateAddresses(t *testing.T) {
 					t.Fatalf(
 						"public key of %q is not a valid secp256r1 public key in %s : %v",
 						address.Bech32EncodedAddress,
-						networkType,
+						chainId,
 						err,
 					)
 				}
@@ -64,7 +69,7 @@ func TestValidateAddresses(t *testing.T) {
 					t.Fatalf(
 						"public key of %q is not a valid secp256r1 public key in %s",
 						address.Bech32EncodedAddress,
-						networkType,
+						chainId,
 					)
 				}
 				_, err = publicKey.ECDH()
@@ -72,7 +77,7 @@ func TestValidateAddresses(t *testing.T) {
 					t.Fatalf(
 						"public key of %q is not a valid secp256r1 public key in %s : %v",
 						address.Bech32EncodedAddress,
-						networkType,
+						chainId,
 						err,
 					)
 				}
@@ -80,7 +85,7 @@ func TestValidateAddresses(t *testing.T) {
 				t.Fatalf(
 					"key algorithm %q is not supported in %s",
 					ab.KeyAlgo(),
-					networkType,
+					chainId,
 				)
 			}
 
@@ -100,7 +105,7 @@ func TestValidateAddresses(t *testing.T) {
 					"ISO20022 branch and identification data of entry %q and %q conflicts in %s.",
 					matches[0],
 					matches[1],
-					networkType,
+					chainId,
 				)
 			}
 			return true

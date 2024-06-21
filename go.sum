@@ -20,8 +20,8 @@ github.com/CoreumFoundation/coreum-tools v0.4.1-0.20230627094203-821c6a4eebab h1
 github.com/CoreumFoundation/coreum-tools v0.4.1-0.20230627094203-821c6a4eebab/go.mod h1:VD93vCHkxYaT/RhOesXTFgd/GQDW54tr0BqGi5JU1c0=
 github.com/CoreumFoundation/coreum/v4 v4.0.0-20240430164528-92d83ae5b61f h1:ualjsDCdlksAthM2/hqPiy3nUsz537OtJO3VHx7jOqc=
 github.com/CoreumFoundation/coreum/v4 v4.0.0-20240430164528-92d83ae5b61f/go.mod h1:TqwVoOiJLL/+Ch/Pl9+2vai29qDBkN3b34knZEb0oig=
-github.com/CoreumFoundation/iso20022-client/iso20022 v0.0.0-20240621084304-e47cd92d8822 h1:RiKeQ4H0MyBwPVtdrWYaBAUEgfMNWUUAhJem9/RFS5E=
-github.com/CoreumFoundation/iso20022-client/iso20022 v0.0.0-20240621084304-e47cd92d8822/go.mod h1:7q14IMVKNtQMrgpyPJ3JJt3z0QYKYpGLKrvH5eChBZo=
+github.com/CoreumFoundation/iso20022-client/iso20022 v0.0.0-20240621102656-b98b36321632 h1:yuRgoRyZ+tLbqafb8+LBwooBBRKVerJnJQbi2qbNpJA=
+github.com/CoreumFoundation/iso20022-client/iso20022 v0.0.0-20240621102656-b98b36321632/go.mod h1:7q14IMVKNtQMrgpyPJ3JJt3z0QYKYpGLKrvH5eChBZo=
 github.com/armon/go-metrics v0.4.1 h1:hR91U9KYmb6bLBYLQjyM+3j+rcd/UhE+G78SFnF8gJA=
 github.com/armon/go-metrics v0.4.1/go.mod h1:E6amYzXo6aW1tqzoZGT755KkbgrJsSdpwZ+3JqfkOG4=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
