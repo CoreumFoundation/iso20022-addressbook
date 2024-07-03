@@ -1,9 +1,5 @@
 {
   "$schema": "../addressbook.schema.json",
-  "chain_id": "coreum-testnet-1",
-  "network_type": "testnet",
-  "bech32_prefix": "testcore",
-  "key_algo": "secp256k1",
   "addresses": [
     {
       "bech32_encoded_address": "testcore1d3et2s6wy0ltc0ju6zxtejhgkxnn3ykzv3k2ft",

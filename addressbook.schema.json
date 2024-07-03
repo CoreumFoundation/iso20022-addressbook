@@ -5,35 +5,13 @@
     "description": "addressbook.json is a metadata file that contains accounts with their ISO20022 identifications.",
     "type": "object",
     "required": [
-      "chain_id", "network_type", "bech32_prefix"
+      "addresses"
     ],
     "properties": {
       "$schema": {
         "type": "string",
         "minLength": 1,
         "pattern": "^(\\.\\./)+addressbook\\.schema\\.json$"
-      },
-      "chain_id": {
-        "type": "string",
-        "minLength": 1
-      },
-      "network_type": {
-        "enum": [
-          "mainnet",
-          "testnet",
-          "devnet"
-        ]
-      },
-      "bech32_prefix": {
-        "type": "string",
-        "minLength": 1,
-        "description": "The default prefix for the human-readable part of addresses that identifies the coin type. Must be registered with SLIP-0173. E.g., 'coreum'"
-      },
-      "key_algo": {
-        "enum": [
-          "secp256k1",
-          "secp256r1"
-        ]
       },
       "addresses": {
         "type": "array",

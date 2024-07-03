@@ -21,7 +21,7 @@ func TestValidateAddresses(t *testing.T) {
 
 		err := ab.Update(ctx)
 		if err != nil {
-			t.Fatalf("could not update %s address book : %v", chainId, err)
+			t.Fatalf("could not update %s address book: %v", chainId, err)
 		}
 
 		localAddressBook := make(map[string]struct{})
@@ -37,7 +37,7 @@ func TestValidateAddresses(t *testing.T) {
 			publicKeyBytes, err := base64.StdEncoding.DecodeString(address.PublicKey)
 			if err != nil {
 				t.Fatalf(
-					"public key of %q is not a valid base64 encoded string in %s : %v",
+					"public key of %q is not a valid base64 encoded string in %s: %v",
 					address.Bech32EncodedAddress,
 					chainId,
 					err,
@@ -48,7 +48,7 @@ func TestValidateAddresses(t *testing.T) {
 			case "secp256k1":
 				if _, err = secp256k1.ParsePubKey(publicKeyBytes); err != nil {
 					t.Fatalf(
-						"public key of %q is not a valid secp256k1 public key in %s : %v",
+						"public key of %q is not a valid secp256k1 public key in %s: %v",
 						address.Bech32EncodedAddress,
 						chainId,
 						err,
@@ -58,7 +58,7 @@ func TestValidateAddresses(t *testing.T) {
 				pbKey, err := x509.ParsePKIXPublicKey(publicKeyBytes)
 				if err != nil {
 					t.Fatalf(
-						"public key of %q is not a valid secp256r1 public key in %s : %v",
+						"public key of %q is not a valid secp256r1 public key in %s: %v",
 						address.Bech32EncodedAddress,
 						chainId,
 						err,
@@ -75,7 +75,7 @@ func TestValidateAddresses(t *testing.T) {
 				_, err = publicKey.ECDH()
 				if err != nil {
 					t.Fatalf(
-						"public key of %q is not a valid secp256r1 public key in %s : %v",
+						"public key of %q is not a valid secp256r1 public key in %s: %v",
 						address.Bech32EncodedAddress,
 						chainId,
 						err,

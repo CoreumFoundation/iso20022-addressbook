@@ -1,9 +1,5 @@
 {
     "$schema": "../addressbook.schema.json",
-    "chain_id": "coreum-devnet-1",
-    "network_type": "devnet",
-    "bech32_prefix": "devcore",
-    "key_algo": "secp256k1",
     "addresses": [
       {
         "bech32_encoded_address": "devcore1jhxlh4jr3gq3cfzukx3zzz87kxw5fy5tpj5zdh",
