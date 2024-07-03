@@ -2,8 +2,6 @@ package iso20022_addressbook
 
 import (
 	"context"
-	"crypto/ecdsa"
-	"crypto/x509"
 	"encoding/base64"
 	"testing"
 
@@ -44,51 +42,14 @@ func TestValidateAddresses(t *testing.T) {
 				)
 			}
 
-			switch ab.KeyAlgo() {
-			case "secp256k1":
-				if _, err = secp256k1.ParsePubKey(publicKeyBytes); err != nil {
-					t.Fatalf(
-						"public key of %q is not a valid secp256k1 public key in %s: %v",
-						address.Bech32EncodedAddress,
-						chainId,
-						err,
-					)
-				}
-			case "secp256r1":
-				pbKey, err := x509.ParsePKIXPublicKey(publicKeyBytes)
-				if err != nil {
-					t.Fatalf(
-						"public key of %q is not a valid secp256r1 public key in %s: %v",
-						address.Bech32EncodedAddress,
-						chainId,
-						err,
-					)
-				}
-				publicKey, ok := pbKey.(*ecdsa.PublicKey)
-				if !ok {
-					t.Fatalf(
-						"public key of %q is not a valid secp256r1 public key in %s",
-						address.Bech32EncodedAddress,
-						chainId,
-					)
-				}
-				_, err = publicKey.ECDH()
-				if err != nil {
-					t.Fatalf(
-						"public key of %q is not a valid secp256r1 public key in %s: %v",
-						address.Bech32EncodedAddress,
-						chainId,
-						err,
-					)
-				}
-			default:
+			if _, err = secp256k1.ParsePubKey(publicKeyBytes); err != nil {
 				t.Fatalf(
-					"key algorithm %q is not supported in %s",
-					ab.KeyAlgo(),
+					"public key of %q is not a valid secp256k1 public key in %s: %v",
+					address.Bech32EncodedAddress,
 					chainId,
+					err,
 				)
 			}
-
 			localAddressBook[address.Bech32EncodedAddress] = struct{}{}
 			matches := make([]string, 0, 1)
 			ab.ForEach(func(address2 addressbook.Address) bool {
