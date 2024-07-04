@@ -1,0 +1,24 @@
+{
+    "$schema": "../addressbook.schema.json",
+    "addresses": [
+      {
+        "bech32_encoded_address": "devcore1jhxlh4jr3gq3cfzukx3zzz87kxw5fy5tpj5zdh",
+        "public_key": "AoJXlGaddrqUDRmG4I769aeEt0okGVr+E+wc9Q+J1ZSu",
+        "branch_and_identification": {
+          "identification": {
+            "bic": "B61NZT4Y"
+          }
+        }
+      },
+      {
+        "bech32_encoded_address": "devcore1kdujjkp8u0j9lww3n7qs7r5fwkljelvecsq43d",
+        "public_key": "A2nYC1ZLFxVLL3kyGUGF4Hjlpwsd+FS7jmxIWahM0P5V",
+        "branch_and_identification": {
+          "identification": {
+            "bic": "6P9YGUDF"
+          }
+        }
+      }
+    ]
+  }
+  
