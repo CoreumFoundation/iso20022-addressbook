@@ -40,13 +40,13 @@
           "public_key": {
             "type": "string"
           },
-          "branch_and_identification": {
-            "$ref": "#/$defs/branch_and_identification"
+          "party": {
+            "$ref": "#/$defs/party"
           }
         },
         "additionalProperties": false
       },
-      "branch_and_identification": {
+      "party": {
         "type": "object",
         "description": "The ISO20022 branch and identification.",
         "required": [
@@ -107,6 +107,11 @@
               "other": {
                 "type": "object",
                 "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 35,
+                    "maxLength": 35
+                  },
                   "issuer": {
                     "type": "string",
                     "minLength": 35,
