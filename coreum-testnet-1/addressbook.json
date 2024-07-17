@@ -4,7 +4,7 @@
     {
       "bech32_encoded_address": "testcore1d3et2s6wy0ltc0ju6zxtejhgkxnn3ykzv3k2ft",
       "public_key": "AvkyUlvWHJhLyy3TSYrAB98ZMhCRszPOcVjN+Q3WzOcZ",
-      "branch_and_identification": {
+      "party": {
         "identification": {
           "bic": "B61NZT4Y"
         }
@@ -13,7 +13,7 @@
     {
       "bech32_encoded_address": "testcore1wklhdxmr88fgd3pmff88erl7u6whvckz0y8z98",
       "public_key": "As6hvvcv3UqvPGXuVnvwA5GMrzUffA3lqh6x8kuGUMnY",
-      "branch_and_identification": {
+      "party": {
         "identification": {
           "bic": "6P9YGUDF"
         }
