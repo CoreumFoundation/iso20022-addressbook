@@ -7,6 +7,28 @@ require github.com/CoreumFoundation/iso20022-client/iso20022 v0.0.0-202407251541
 
 replace github.com/CoreumFoundation/iso20022-client/iso20022-messages => github.com/CoreumFoundation/iso20022-client/iso20022-messages v0.0.0-20240725154107-ea41527ec61d
 
+// same replacements as in coreum
+replace (
+	// cosmos keyring
+	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
+	github.com/coinbase/rosetta-sdk-go => github.com/coinbase/mesh-sdk-go v0.8.5
+	// TODO remove it: https://github.com/cosmos/cosmos-sdk/issues/10409
+	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.9.0
+	// cosmos-sdk v0.47 doesn't support newer versions of prometheus
+	github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.16.0
+	github.com/prometheus/client_model => github.com/prometheus/client_model v0.3.0
+	github.com/prometheus/common => github.com/prometheus/common v0.42.0
+	github.com/prometheus/procfs => github.com/prometheus/procfs v0.12.0
+	// https://github.com/cosmos/cosmos-sdk/issues/14949
+	// pin the version of goleveldb to v1.0.1-0.20210819022825-2ae1ddf74ef7 required by SDK v47 upgrade guide.
+	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
+	github.com/ugorji/go => github.com/ugorji/go v1.2.9
+	// Pin the x/exp dependency version because consmos-sdk breaking change is not compatible
+	// with cosmos-sdk v0.47.
+	// Details: https://github.com/cosmos/cosmos-sdk/issues/18415
+	golang.org/x/exp => golang.org/x/exp v0.0.0-20230711153332-06a737ee72cb
+)
+
 require (
 	cosmossdk.io/errors v1.0.1 // indirect
 	cosmossdk.io/math v1.3.0 // indirect
@@ -46,6 +68,7 @@ require (
 	github.com/libp2p/go-buffer-pool v0.1.0 // indirect
 	github.com/linxGnu/grocksdb v1.7.16 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
+	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mimoo/StrobeGo v0.0.0-20210601165009-122bf33a46e0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.2 // indirect
