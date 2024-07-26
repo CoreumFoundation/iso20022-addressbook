@@ -6,14 +6,20 @@ import (
 	"testing"
 
 	"github.com/CoreumFoundation/iso20022-client/iso20022/addressbook"
+	"github.com/CoreumFoundation/iso20022-client/iso20022/logger"
 )
 
 func TestValidateAddresses(t *testing.T) {
 	ctx := context.Background()
 
+	log, err := logger.NewZapLogger(logger.DefaultZapLoggerConfig())
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
 	chainIds := []string{"coreum-mainnet-1", "coreum-testnet-1", "coreum-devnet-1"}
 	for _, chainId := range chainIds {
-		ab := addressbook.NewWithRepoAddress(fmt.Sprintf("file://./%s/addressbook.json", chainId))
+		ab := addressbook.NewWithRepoAddress(log, fmt.Sprintf("file://./%s/addressbook.json", chainId))
 
 		err := ab.Update(ctx)
 		if err != nil {
