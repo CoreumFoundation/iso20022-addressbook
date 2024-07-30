@@ -2,8 +2,8 @@
   "$schema": "../addressbook.schema.json",
   "addresses": [
     {
-      "bech32_encoded_address": "testcore1d3et2s6wy0ltc0ju6zxtejhgkxnn3ykzv3k2ft",
-      "public_key": "AvkyUlvWHJhLyy3TSYrAB98ZMhCRszPOcVjN+Q3WzOcZ",
+      "bech32_encoded_address": "testcore1tagmslrz9xqfyjdddt6nu3q97us3ejck6475n8",
+      "public_key": "AqV7ob5PTCKOaiOp6iD6tQvjGorS6xLJiGQaVRBvQzM+",
       "party": {
         "identification": {
           "bic": "B61NZT4Y"
@@ -11,8 +11,17 @@
       }
     },
     {
-      "bech32_encoded_address": "testcore1wklhdxmr88fgd3pmff88erl7u6whvckz0y8z98",
-      "public_key": "As6hvvcv3UqvPGXuVnvwA5GMrzUffA3lqh6x8kuGUMnY",
+      "bech32_encoded_address": "testcore14gn3zccg3tfcv3rnx9rj4ftaj67sth4zs5ptqs",
+      "public_key": "A3whi6aQrOAF/RXfxQGOD/Si2OQEKUe87Acmzhw1suO4",
+      "party": {
+        "identification": {
+          "bic": "6P9YGUDF"
+        }
+      }
+    },
+    {
+      "bech32_encoded_address": "testcore163729qkdvw3vzufqrvku9jap5mkv4zg5a7dsj4",
+      "public_key": "A+8LamCPlgehohN55CVqQkHvWVxKuuUAKFwDw7N+OT/j",
       "party": {
         "identification": {
           "bic": "6P9YGUDF"
