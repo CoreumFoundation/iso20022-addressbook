@@ -190,12 +190,12 @@
                 },
                 "issuer": {
                   "type": "string",
-                  "minLength": 35,
+                  "minLength": 1,
                   "maxLength": 35
                 },
                 "scheme_name": {
                   "type": "string",
-                  "minLength": 35,
+                  "minLength": 1,
                   "maxLength": 35
                 }
               }
