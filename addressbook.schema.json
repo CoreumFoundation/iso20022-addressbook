@@ -109,12 +109,12 @@
                 "properties": {
                   "id": {
                     "type": "string",
-                    "minLength": 35,
+                    "minLength": 1,
                     "maxLength": 35
                   },
                   "issuer": {
                     "type": "string",
-                    "minLength": 35,
+                    "minLength": 1,
                     "maxLength": 35
                   },
                   "scheme_name": {
